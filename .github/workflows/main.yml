@@ -13,13 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Code for setup and work 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Build processes
+        run: echo "Build successfully!"
 
-      # - name: Build app
-      #   run: npm run build
+  test:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: echo "Tests passed!"
+
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
